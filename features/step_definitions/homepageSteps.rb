@@ -1,5 +1,4 @@
 Given('I am on welcome page') do
-  page.driver.browser.manage.window.resize_to(1000, 800)
   visit('/')
 end
 When('I push {string} button') do |string|

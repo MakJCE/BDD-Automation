@@ -15,7 +15,7 @@ Capybara.default_driver = :selenium
 Capybara.app_host = ENV["CAPYBARA_HOST"]
 
 # Set the time (in seconds) Capybara should wait for elements to appear on the page
-Capybara.default_max_wait_time = 100
+Capybara.default_max_wait_time = 15
 Capybara.default_driver = :selenium
 Capybara.app_host = "http://nahual-argentina-develop.vercel.app/"
 
@@ -32,8 +32,8 @@ end
 
 
 #CapybaraDriverRegistrar.register_selenium_driver(:chrome)
-CapybaraDriverRegistrar.register_selenium_driver(:firefox)
-#CapybaraDriverRegistrar.register_selenium_driver(:edge)
+#CapybaraDriverRegistrar.register_selenium_driver(:firefox)
+CapybaraDriverRegistrar.register_selenium_driver(:edge)
 Capybara.run_server = false
 #World(Capybara)
 
