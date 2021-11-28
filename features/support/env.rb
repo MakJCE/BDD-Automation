@@ -3,11 +3,11 @@ require 'capybara'
 require 'capybara/dsl'
 require 'capybara/cucumber'
 require 'capybara-screenshot/cucumber'
-require 'watir'
+require "selenium-webdriver"
 
 #PTravel Settings
-ENV['USER']="john.doe.ucbcba@gmail.com"
-ENV['PSW']="calidad2021"
+ENV['USER']="lolomarina2021@yahoo.com"
+ENV['PSW']="calidad1202"
 
 Capybara.default_driver = :selenium
 
@@ -23,10 +23,7 @@ class CapybaraDriverRegistrar
   # register a Selenium driver for the given browser to run on the localhost
   def self.register_selenium_driver(browser)
     Capybara.register_driver :selenium do |app|
-      args = ['--disable-web-security','--user-data-dir=C:\Users\ABC\AppData\Local\Google\Chrome\User Data','--allow-running-insecure-content']
-
-      options = Selenium::WebDriver::Chrome::Options.new(args: args)
-      Capybara::Selenium::Driver.new(app, :browser => browser, capabilities: [options])
+      Capybara::Selenium::Driver.new(app, :browser => browser)
     end
   end
 
@@ -35,7 +32,8 @@ end
 
 
 CapybaraDriverRegistrar.register_selenium_driver(:chrome)
-#CapybaraDriverRegistrar.register_selenium_driver(:chrome)
+#CapybaraDriverRegistrar.register_selenium_driver(:firefox)
+#CapybaraDriverRegistrar.register_selenium_driver(:edge)
 Capybara.run_server = false
 #World(Capybara)
 
