@@ -1,4 +1,5 @@
 Given('I am on welcome page') do
+  page.driver.browser.manage.window.resize_to(1000, 800)
   visit('/')
 end
 When('I push {string} button') do |string|
@@ -7,7 +8,7 @@ When('I push {string} button') do |string|
 end
 Then('I stay in home page') do
   sleep 5
-  expect(page).to have_current_path("https://nahual-argentina-develop.vercel.app/")
+  expect(page).to have_current_path("https://nahual-argentina-develop.vercel.app/home")
 end
 
 #   When('I push {string}') do |string|

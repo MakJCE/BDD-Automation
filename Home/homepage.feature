@@ -6,5 +6,6 @@ Feature: acces to Nahual at the first time
 @beforeNeedToLoggin
 Scenario: Enter for the first time
     Given I am on welcome page
-    When I push "Verificar Acceso" button
+    When I push "Iniciar Sesión" button
+    And I push "Verificar Acceso" button
     Then I stay in home page
