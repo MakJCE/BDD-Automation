@@ -3,13 +3,8 @@ Feature: acces to Nahual at the first time
     As a Nahual member
     I want to access to the welcome page
 
-
+@beforeNeedToLoggin
 Scenario: Enter for the first time
     Given I am on welcome page
-    When I push "Iniciar Sesión" button
-    And I push "Iniciar con Google"
-    And I enter my username
-    And I push "Siguiente" button
-    And I enter my password
-    And I push "Siguiente" button
+    When I push "Verificar Acceso" button
     Then I stay in home page
