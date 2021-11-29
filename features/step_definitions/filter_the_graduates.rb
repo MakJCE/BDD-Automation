@@ -1,4 +1,4 @@
-When('I push {string} navlink') do |string|
+Given('I push {string} navlink') do |string|
     sleep 2
     find(:xpath, "/html/body/div/div/div[4]/div[2]/div/div[1]/a[4]/a").click
 end
@@ -39,3 +39,39 @@ When('I push the {string} option of {string} section') do |string,sec|
     sleep 2
     find(:xpath, '/html/body/div/div/div[4]/div[2]/div/div[2]/div[1]/div/div[2]/div[1]/div[2]/div[1]').click
 end
+
+def count_columns(xpath)
+    size = 0
+    within(:xpath, xpath) do
+        size = all('th').count
+    end
+    return size
+end
+def get_position_column(object, columns)
+    size = count_columns(columns)
+    column = 1
+    value = ""
+    while column <= size do
+        value = find(:xpath, columns+"/th["+column.to_s+"]").text
+        if (object == value)
+            return column
+        end
+        column = column + 1
+    end
+    return -1
+end
+
+Then('I should see a table with only {string} in {string} column') do |value,column|
+    columns = '/html/body/div/div/div[4]/div[2]/div/div[2]/div[2]/table/thead/tr'
+    rows = '/html/body/div/div/div[4]/div[2]/div/div[2]/div[2]/table/tbody'
+    position = get_position_column(column, columns)
+    rows = rows + "/td["+position.to_s+"]"
+    within(:xpath, "/html/body/div/div/div[4]/div[2]/div/div[2]/div[2]/table/thead/tr/th[5]") do
+        page.should have_content('NODO')
+    end
+end
+#"/html/body/div/div/div[4]/div[2]/div/div[2]/div[2]/table/thead/tr/th[1]"
+#"/html/body/div/div/div[4]/div[2]/div/div[2]/div[2]/table/thead/tr/th[5]"
+#"/html/body/div/div/div[4]/div[2]/div/div[2]/div[2]/table/tbody/tr[1]/td[5]"
+#"/html/body/div/div/div[4]/div[2]/div/div[2]/div[2]/table/tbody/tr[2]/td[5]"
+#"/html/body/div/div/div[4]/div[2]/div/div[2]/div[2]/table/tbody/tr[3]/td[5]"

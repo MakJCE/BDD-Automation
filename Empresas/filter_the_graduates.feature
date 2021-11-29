@@ -5,9 +5,10 @@ Feature: Filter the graduates
 
     
 Scenario: Filter for Nodo
-    When I push "Empresas" navlink
-    And I push the "Filtrar" filter
+    Given I push "Empresas" navlink
+    When I push the "Filtrar" filter
     And I push the "Nodo" section
 	And I push the "CABA" option of "Nodo" section
+    Then I should see a table with only "CABA" in "NODO" column
 
     
