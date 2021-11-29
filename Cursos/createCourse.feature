@@ -3,9 +3,6 @@ Feature: create a new course
     I want to create a new course
     In order to teach my students about a certain subject
 
-@beforeNeedToLoggin
-Background:
-Given I click "Verificar Acceso" button
 
 Scenario Outline: create a course correctly
     And I click "Cursos" navlink
