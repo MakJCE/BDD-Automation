@@ -47,6 +47,9 @@ def count_columns(xpath)
     end
     return size
 end
+def count_rows(xpath)
+    return all(:xpath, xpath).count
+end
 def get_position_column(object, columns)
     size = count_columns(columns)
     column = 1
@@ -60,15 +63,23 @@ def get_position_column(object, columns)
     end
     return -1
 end
-
+def all_values_are_same(object, position_column,rows)
+    size = count_rows(rows)
+    row = 0
+    column = "td["+position_column.to_s+"]"
+    while (row < size) do
+        row = row + 1
+        if (find(:xpath, rows+"["+row.to_s+"]/"+column).text != object)
+            return false
+        end
+    end
+    return true
+end
 Then('I should see a table with only {string} in {string} column') do |value,column|
     columns = '/html/body/div/div/div[4]/div[2]/div/div[2]/div[2]/table/thead/tr'
-    rows = '/html/body/div/div/div[4]/div[2]/div/div[2]/div[2]/table/tbody'
-    position = get_position_column(column, columns)
-    rows = rows + "/td["+position.to_s+"]"
-    within(:xpath, "/html/body/div/div/div[4]/div[2]/div/div[2]/div[2]/table/thead/tr/th[5]") do
-        page.should have_content('NODO')
-    end
+    rows = '/html/body/div/div/div[4]/div[2]/div/div[2]/div[2]/table/tbody/tr'
+    position_column = get_position_column(column, columns)
+    expect(all_values_are_same(value,position_column,rows)).to be true
 end
 #"/html/body/div/div/div[4]/div[2]/div/div[2]/div[2]/table/thead/tr/th[1]"
 #"/html/body/div/div/div[4]/div[2]/div/div[2]/div[2]/table/thead/tr/th[5]"
