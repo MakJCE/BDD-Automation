@@ -23,3 +23,11 @@ Scenario: Filter for level of english
 	And I push the "Nivel de Ingles" section
 	And I push the "Basico" option of "Nivel de Ingles" section
 	Then I should see a table with only "Nivel de Ingles" in "Basico" column
+
+Scenario: Deselect Nodo
+	Given I push "Empresas" navlink
+	When I push the "Filtrar" filter
+	And I push the "Nodo" section
+	And I push the "CABA" option of "Nodo" section
+	And I deselect the "Nodo" label 
+	Then I should see a table with many Nodos

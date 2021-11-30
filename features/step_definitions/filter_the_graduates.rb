@@ -81,6 +81,12 @@ def all_values_are_same(object, position_column,rows)
     end
     return true
 end
+
+When('I deselect the {string} label') do |deselect|
+    find(:xpath, "/html/body/div/div/div[4]/div[2]/div/div[2]/div[1]/div[2]/i").click;
+end
+
+
 Then('I should see a table with only {string} in {string} column') do |value,column|
     columns = '/html/body/div/div/div[4]/div[2]/div/div[2]/div[2]/table/thead/tr'
     rows = '/html/body/div/div/div[4]/div[2]/div/div[2]/div[2]/table/tbody/tr'
@@ -89,4 +95,9 @@ Then('I should see a table with only {string} in {string} column') do |value,col
 end
 Then('I should see a table with only {string} in {string} button') do |value,column|
    
+end
+
+Then('I should see a table with many Nodos') do
+    rows = '/html/body/div/div/div[4]/div[2]/div/div[2]/div[2]/table/tbody/tr'
+    expect(count_rows(rows)>0).to be true
 end
