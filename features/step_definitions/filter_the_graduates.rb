@@ -30,14 +30,20 @@ When('I push the {string} section') do |string|
     end
 end
 When('I push the {string} option of {string} section') do |string,sec|
-    list = find(:xpath, "/html/body/div/div/div[4]/div[2]/div/div[2]/div[1]/div/div[2]/div[1]").text
+    list = find(:xpath, "/html/body/div/div/div[4]/div[2]/div/div[2]/div[1]/div/div[2]").text
     list = list.split("\n")
     position_section = get_position(sec, list)
-    list = find(:xpath, "/html/body/div/div/div[4]/div[2]/div/div[2]/div[1]/div/div[2]/div[1]/div[2]").text
+    if (position_section == -1) 
+        raise "Section "+string+" not found."
+    end
+    list = find(:xpath, "/html/body/div/div/div[4]/div[2]/div/div[2]/div[1]/div/div[2]/div["+position_section.to_s+"]/div[2]").text
     list = list.split("\n")
     position = get_position(string, list)
+    if (position == -1) 
+        raise "Section "+string+" not found."
+    end
     sleep 2
-    find(:xpath, '/html/body/div/div/div[4]/div[2]/div/div[2]/div[1]/div/div[2]/div[1]/div[2]/div[1]').click
+    find(:xpath, '/html/body/div/div/div[4]/div[2]/div/div[2]/div[1]/div/div[2]/div['+position_section.to_s+']/div[2]/div['+position_section.to_s+']').click
 end
 
 def count_columns(xpath)
@@ -81,8 +87,6 @@ Then('I should see a table with only {string} in {string} column') do |value,col
     position_column = get_position_column(column, columns)
     expect(all_values_are_same(value,position_column,rows)).to be true
 end
-#"/html/body/div/div/div[4]/div[2]/div/div[2]/div[2]/table/thead/tr/th[1]"
-#"/html/body/div/div/div[4]/div[2]/div/div[2]/div[2]/table/thead/tr/th[5]"
-#"/html/body/div/div/div[4]/div[2]/div/div[2]/div[2]/table/tbody/tr[1]/td[5]"
-#"/html/body/div/div/div[4]/div[2]/div/div[2]/div[2]/table/tbody/tr[2]/td[5]"
-#"/html/body/div/div/div[4]/div[2]/div/div[2]/div[2]/table/tbody/tr[3]/td[5]"
+Then('I should see a table with only {string} in {string} button') do |value,column|
+   
+end
