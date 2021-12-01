@@ -9,6 +9,7 @@ Background:
     And I press "Cursos" button 
     When I press "Nodos Sedes" navlink
     Then I should stay in Nodos-Sedes view
+    
 @afterEraseNodo
 Scenario: create Nodo
     Given I press the "Nodo" button
