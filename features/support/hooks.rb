@@ -34,4 +34,7 @@ end
 
 After "@afterTopicoIsDeleted" do
   puts "topico is been deleted"
+
+After do 
+    Capybara.current_session.driver.quit
 end
