@@ -1,7 +1,7 @@
-Feature:  graduates additional information
+Feature:  Get more information about the graduates
     As a User that need graduates to hire
-    I want to view the information about the graduates
-    In order to view more about the graduate
+    I want to view the information graduates
+    In order to know more about the habilities of the graduates
 
 Scenario: View more information of graduate
 	Given I push "Empresas" navlink
