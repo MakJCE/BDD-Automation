@@ -98,6 +98,5 @@ Then('I should see a table with only {string} in {string} button') do |value,col
 end
 
 Then('I should see a table with many Nodos') do
-    rows = '/html/body/div/div/div[4]/div[2]/div/div[2]/div[2]/table/tbody/tr'
     expect(count_rows(rows)>0).to be true
 end

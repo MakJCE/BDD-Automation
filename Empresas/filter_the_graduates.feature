@@ -10,13 +10,6 @@ Scenario: Filter for Nodo
 	And I push the "CABA" option of "Nodo" section
     Then I should see a table with only "CABA" in "NODO" column
 
-Scenario: Filter for coursed module
-	Given I push "Empresas" navlink
-	When I push the "Filtrar" filter
-	And I push the "Modulo Cursado" section
-	And I push the "Introducción a la Programación" option of "Modulo Cursado" section
-    Then I should see a table with only "Introducción a la Programación" in "MÓDULOS CURSADOS" butto
-
 Scenario: Filter for level of english
 	Given I push "Empresas" navlink
 	When I push the "Filtrar" filter
