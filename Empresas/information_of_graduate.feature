@@ -12,11 +12,3 @@ Scenario: View more information of graduate
 	And I should see "Nivel de inglés:" title
 	And I should see "Sede:" title
 	And I should see "Nodo:" title
-
-Scenario: Filter for coursed module
-	Given I push "Empresas" navlink
-	When I push the "Filtrar" filter
-	And I push the "Modulo Cursado" section
-	And I push the "Introducción a la Programación" option of "Modulo Cursado" section
-	And I push the first "MÓDULOS CURSADOS" button
-    Then I should see the module "Introducción a la Programación" 
