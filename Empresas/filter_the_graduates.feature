@@ -15,7 +15,7 @@ Scenario: Filter for level of english
 	When I push the "Filtrar" filter
 	And I push the "Nivel de Ingles" section
 	And I push the "Basico" option of "Nivel de Ingles" section
-	Then I should see a table with only "Nivel de Ingles" in "Basico" column
+	Then I should see a table with only "Basico" in "NIVEL DE INGLES" column
 
 Scenario: Deselect Nodo
 	Given I push "Empresas" navlink
@@ -24,3 +24,7 @@ Scenario: Deselect Nodo
 	And I push the "CABA" option of "Nodo" section
 	And I deselect the "Nodo" label 
 	Then I should see a table with many Nodos
+
+Scenario: Filter for coursed module
+	Given I push "Empresas" navlink
+	Then I should see the buttons "Ver modulos" in "MÓDULOS CURSADOS" column with the value "Testing Funcional"

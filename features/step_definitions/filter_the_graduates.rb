@@ -33,17 +33,19 @@ When('I push the {string} option of {string} section') do |string,sec|
     list = find(:xpath, "/html/body/div/div/div[4]/div[2]/div/div[2]/div[1]/div/div[2]").text
     list = list.split("\n")
     position_section = get_position(sec, list)
+
     if (position_section == -1) 
         raise "Section "+string+" not found."
     end
     list = find(:xpath, "/html/body/div/div/div[4]/div[2]/div/div[2]/div[1]/div/div[2]/div["+position_section.to_s+"]/div[2]").text
     list = list.split("\n")
     position = get_position(string, list)
+
     if (position == -1) 
-        raise "Section "+string+" not found."
+        raise "Option "+string+" not found."
     end
     sleep 2
-    find(:xpath, '/html/body/div/div/div[4]/div[2]/div/div[2]/div[1]/div/div[2]/div['+position_section.to_s+']/div[2]/div['+position_section.to_s+']').click
+    find(:xpath, '/html/body/div/div/div[4]/div[2]/div/div[2]/div[1]/div/div[2]/div['+position_section.to_s+']/div[2]/div['+position.to_s+']').click
 end
 
 def count_columns(xpath)
@@ -91,12 +93,38 @@ Then('I should see a table with only {string} in {string} column') do |value,col
     columns = '/html/body/div/div/div[4]/div[2]/div/div[2]/div[2]/table/thead/tr'
     rows = '/html/body/div/div/div[4]/div[2]/div/div[2]/div[2]/table/tbody/tr'
     position_column = get_position_column(column, columns)
+    if (position_column == -1)
+        raise "Column "+column+" not found."
+    end
     expect(all_values_are_same(value,position_column,rows)).to be true
 end
-Then('I should see a table with only {string} in {string} button') do |value,column|
-   
+
+def all_rows_have_the_value(object, position_column,rows, value, value_close)
+    size = count_rows(rows)
+    row = 0
+    column = "td["+position_column.to_s+"]"
+    while (row < size) do
+        row = row + 1
+        find(:xpath, rows+"["+row.to_s+"]/"+column+"/button").click
+        if (has_content?(value) == false)
+            return false
+        end
+        click_on(value_close)
+    end
+    return true
+end
+
+Then('I should see the buttons {string} in {string} column with the value {string}') do |name_button,column, value|
+    columns = '/html/body/div/div/div[4]/div[2]/div/div[2]/div[2]/table/thead/tr'
+    rows = '/html/body/div/div/div[4]/div[2]/div/div[2]/div[2]/table/tbody/tr'
+    position_column = get_position_column(column, columns)
+    if (position_column == -1)
+        raise "Column "+column+" not found."
+    end
+    expect(all_rows_have_the_value(value,position_column,rows,value,"Cerrar")).to be true
 end
 
 Then('I should see a table with many Nodos') do
+    rows = '/html/body/div/div/div[4]/div[2]/div/div[2]/div[2]/table/tbody/tr'
     expect(count_rows(rows)>0).to be true
 end
