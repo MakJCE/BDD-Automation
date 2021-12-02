@@ -4,6 +4,14 @@ Given('I push {string} navlink') do |string|
     find(:xpath, "/html/body/div/div/div[4]/div[2]/div/div[1]/a[4]/a").click
 end
 
+Given('I push {string} in left side menu') do |string|
+    all("a.item").each do |item|
+        if item.text == string
+            item.click()
+        end
+    end
+end
+
 When('I push the {string} filter') do |string|
     sleep 2
     find(:xpath, '//*[@id="root"]/div/div[4]/div[2]/div/div[2]/div[1]/div/div[1]').click
@@ -11,6 +19,7 @@ end
 
 When('I push the {string} section') do |string|
     sleep 2
+    #
     list = find("#root > div > div.ui.container > div.app > div > div.pusher > div.ui.segment > div > div.menu.transition.visible").text
     list = list.split("\n")
     position = get_position(string, list)
