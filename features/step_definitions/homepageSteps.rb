@@ -1,6 +1,5 @@
 Given('I am on the first page') do
   visit('/')
-<<<<<<< HEAD
   page.driver.browser.manage.window.resize_to(1200, 800)
 end
 
@@ -10,9 +9,6 @@ end
 
 Given('I can see the title {string}') do |string|
   expect(page.has_content?(string)).to be true
-=======
-  page.driver.browser.manage.window.resize_to(1000, 800)
->>>>>>> 2ce6a80... Visualizar Egresados
 end
 
 When('I click Iniciar con Google button') do
