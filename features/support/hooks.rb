@@ -92,8 +92,14 @@ Before "@beforeCourseIsCreated" do
 end
 
 After "@afterCourseIsDeleted" do
+  login()
   puts "course is been deleted"
   sleep 1
+  all("a.item").each do |item|
+    if item.text == "Cursos"
+        item.click()
+    end
+  end
   profesor = $created_user["Profesor"]
   topic = $created_user["Topico"]
   locatedRow = -1
@@ -108,14 +114,44 @@ After "@afterCourseIsDeleted" do
   row = all("table tr")[locatedRow]
   row.find('button', :text => "Eliminar").click()
   $created_user={}
+  Capybara.current_session.driver.quit
 end
 
 After "@afterTopicoIsDeleted" do
+  login()
   puts "topico is been deleted"
+  all("a.item").each do |item|
+    if item.text == "Cursos"
+        item.click()
+    end
+  end
+  find("div.ui.pointing.secondary.menu a", :text => "Topicos").click()
+  name = $created_topico["nombre"]
+  locatedTopico = -1
+  rows = all("table tr")
+  rows.each_with_index do |row, index|
+      if row.has_css?('td', :text => name, wait: 0)
+          locatedRow = index
+      end
+  end
+  row = all("table tr")[locatedRow]
+  row.find('button', :text => "Eliminar").click()
 end 
 
 Before "@beforeTopicoIsCreated" do
+  all("a.item").each do |item|
+    if item.text == "Cursos"
+        item.click()
+    end
+  end
+  find("div.ui.pointing.secondary.menu a", :text => "Topicos").click()
   puts "topico is been created"
+  login()
+  find("a.item", :text => "Cursos").click()
+  click_on("Topico")
+  find("form input").set("Topico de ejemplo")
+  click_on("Crear")
+  Capybara.current_session.driver.quit
 end 
 
 After "@afterNodoIsDeleted" do
