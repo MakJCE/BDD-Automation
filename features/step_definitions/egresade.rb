@@ -30,6 +30,35 @@ When('I push {string} button of random graduate row') do |boton|
     locatedRow = -1
 end
 
+When('I push {string} button on the confirmation message') do |boton|
+    find("div.modals.active div div.actions button",:text => boton).click
+end
+
+Then("{string} should't been show on the register") do |alumno|
+    show_onregister = false
+    rows = all("td.bordes-tabla div.nombre")
+    rows.each_with_index do |row, index|
+        if row.text == alumno
+            show_onregister = true
+            break            
+        end
+    end
+    expect(show_onregister).to be false
+end
+
+Then('{string} should been shown on the register') do |alumno|
+    show_onregister = false
+    rows = all("td.bordes-tabla div.nombre")
+    rows.each_with_index do |row, index|
+        if row.text == alumno
+            show_onregister = true
+            break            
+        end
+    end
+    expect(show_onregister).to be true
+end
+
+
 Then('I can see the personal data of the graduate') do
     sleep 1
     result = find("div div.eleven h1").text
