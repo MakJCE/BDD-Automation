@@ -22,7 +22,6 @@ Scenario: See the personal data of a specific graduate
 	And I can see his "Correo" should be "celestino.calero@gcorreo.com"
 	And I can see his "Telefono" should be "10000002"
 
-
 Scenario: See the personal data of a random graduate
 	Given I push "Egresades" in left side menu
 	When I push "Ver" button of random graduate row 
