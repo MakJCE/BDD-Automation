@@ -81,7 +81,6 @@ end
 Then('I should not see {string} filtered section') do |filter|
 
     has_content = true
-    puts("---------------------")
     elements = find("#root > div > div.ui.container > div.app > div > div.pusher > div.ui.segment").text
     if (elements.include? filter)
         has_content = true

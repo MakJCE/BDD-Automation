@@ -52,3 +52,6 @@ Scenario: Filter for coursed module
 	Then I should see the buttons "Ver modulos" in "MÓDULOS CURSADOS" column with the value "Testing Funcional"
 
 
+Scenario: Enter a the main page of Nahual
+    Given I click "Verificar Acceso" button
+    When I push "Visitanos" option in the page
