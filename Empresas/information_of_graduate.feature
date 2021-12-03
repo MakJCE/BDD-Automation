@@ -1,7 +1,7 @@
 Feature:  Get more information about the graduates
-    As a User that need graduates to hire
+    As An user that needs to contact graduates to hire
     I want to view the information graduates
-    In order to know more about the habilities of the graduates
+    In order to know more about the skills of the graduates
 
 Background: Loggin with Google account
 	Given I am on the first page
@@ -14,8 +14,8 @@ Background: Loggin with Google account
 	And I click "Verificar Acceso" button
 
 
-Scenario: View more information of graduate
-	Given I push "Empresas" navlink
+Scenario: View the complete information of a graduate
+	Given I push "Empresas" in left side menu
 	When I push the first eye button
 	Then I should see "Correo" title
 	And I should see "Teléfono:" title

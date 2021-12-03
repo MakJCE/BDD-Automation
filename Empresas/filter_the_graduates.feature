@@ -1,5 +1,5 @@
 Feature: Filter the graduates
-    As a User that needs to contact graduates to hire
+    As An user that needs to contact graduates to hire
     I want to Filter the graduates currents
     In order to view the qualities as may be necessary
 
@@ -46,12 +46,4 @@ Scenario Outline: Deselect all filters section
 	And I deselect all filters 
 	Then I should not see "Quitar Todos" filtered section
 
-@duda
-Scenario: Filter for coursed module
-	Given I push "Empresas" in left side menu
-	Then I should see the buttons "Ver modulos" in "MÓDULOS CURSADOS" column with the value "Testing Funcional"
 
-
-Scenario: Enter a the main page of Nahual
-    Given I click "Verificar Acceso" button
-    When I push "Visitanos" option in the page
