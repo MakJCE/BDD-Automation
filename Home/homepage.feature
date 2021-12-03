@@ -12,10 +12,18 @@ Background: Loggin with Google account
   And I enter my password
   And I click "Siguiente" button
 
+Scenario Outline: Log in and out of access page
+    Given I am in a page with title "<button_title>"
+    When I click "<button>" button
+    Then I am redirected to a page with the title "<title>"
+Examples: 
+	  |           button_title          |     button       |              title                   |
+	  |         Ingresar al Portal      | Verificar Acceso |     ! Bienvenide Juan Casas !        |
+	  | Cambiar a una cuenta con acceso |  Cerrar Sesion   |  Para continuar debe iniciar sesión. |
 
-Scenario: Request access to the website
-    Given I can see the title "Solicite Acceso"
+Scenario: Request access to the main page
+    Given I am in a page with title "Solicite Acceso"
     When I click "Solicitar" button
-    Then I can see the email of the account
-    And the "nombre" space "is not empty"
-    And the "motivo" space "is empty"
+    Then A window is displayed showing the email of the account
+    And the "nombre" field "is not empty"
+    And the "motivo" field "is empty"
