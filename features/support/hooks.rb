@@ -126,7 +126,7 @@ After "@afterTopicoIsDeleted" do
     end
   end
   find("div.ui.pointing.secondary.menu a", :text => "Topicos").click()
-  name = $created_topico["nombre"]
+  name = $created_user["Topico"]
   locatedTopico = -1
   rows = all("table tr")
   rows.each_with_index do |row, index|

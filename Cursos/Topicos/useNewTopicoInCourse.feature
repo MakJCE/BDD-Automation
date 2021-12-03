@@ -39,8 +39,10 @@ Scenario: create a new topic and use it to create a new course
 @afterCourseIsDeleted
 @afterTopicoIsDeleted
 Scenario: create a new course and use it to change the current topic of that course with a new topic
-    Given I click "Topico" button
-    When I enter "Funcional" in "Topico" field
+    Given I click "Cursos" in left side menu
+    And I click "Topicos" section on the horizontal menu on top of the view
+    When I click "Topico" button
+    And I enter "Funcional" in "Topico" field
     And I click "Crear" button
     And I click "Cursos" section on the horizontal menu on top of the view
     And I click "Nuevo Curso" button
