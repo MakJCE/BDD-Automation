@@ -105,6 +105,7 @@ Then('I can see the personal data of the graduate') do
     sleep 1
     result = find("div div.eleven h1").text
     expect(result).to eql(nombre)
+    nombre = ""
 end
 
 Then('I can see the personal data of the random graduate') do
