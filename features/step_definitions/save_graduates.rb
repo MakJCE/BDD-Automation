@@ -10,4 +10,4 @@ end
   
 Then('the counter of export button must be {string}') do |graduates|
     expect(find(:xpath, "/html/body/div/div/div[4]/div[2]/div/div[2]/div[3]/span/div/div")).to have_content(graduates)
-end                     
+end    
