@@ -9,6 +9,7 @@ end
 
 Given('I can see the title {string}') do |string|
   expect(page.has_content?(string)).to be true
+  page.driver.browser.manage.window.resize_to(1000, 800)
 end
 
 When('I click Iniciar con Google button') do
