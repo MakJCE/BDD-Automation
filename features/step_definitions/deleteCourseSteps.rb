@@ -1,12 +1,6 @@
 locatedRow = -1
 Given ('I locate the row of the course with {string} topic and {string} profesor') do |topic, profesor|
     sleep 2
-    rows = all("table tr")
-    rows.each_with_index do |row, index|
-        if row.has_css?('td', :text => profesor, wait: 0) && row.has_css?('td', :text => topic, wait: 0)
-            locatedRow = index
-        end
-    end
 end
 
 When ('I click Eliminar button on the located row') do 
