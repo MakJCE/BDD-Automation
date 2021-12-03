@@ -1,5 +1,6 @@
 Given('I am on the first page') do
   visit('/')
+  page.driver.browser.manage.window.resize_to(1400, 800)
 end
 
 When('I click Iniciar con Google button') do

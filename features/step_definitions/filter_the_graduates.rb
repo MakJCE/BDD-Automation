@@ -12,7 +12,7 @@ Given('I push {string} in left side menu') do |string|
     end
 end
 
-When('I push the {string} filter') do |string|
+When('I push the filter') do
     sleep 2
     find(:xpath, '//*[@id="root"]/div/div[4]/div[2]/div/div[2]/div[1]/div/div[1]').click
 end
@@ -50,8 +50,12 @@ When('I push the {string} option of {string} section') do |string,sec|
     find(:xpath, '/html/body/div/div/div[4]/div[2]/div/div[2]/div[1]/div/div[2]/div['+position_section.to_s+']/div[2]/div['+position.to_s+']').click
 end
 
-When('I deselect the {string} label') do |deselect|
+When('I deselect the filter selected') do
     find(:xpath, "/html/body/div/div/div[4]/div[2]/div/div[2]/div[1]/div[2]/i").click;
+end
+
+When('I deselect all filters') do
+    find(:xpath, "/html/body/div/div/div[4]/div[2]/div/div[2]/div[1]/a/i").click;
 end
 
 Then('I should see a table with only {string} in {string} column') do |value,column|
@@ -74,7 +78,15 @@ Then('I should see the buttons {string} in {string} column with the value {strin
     expect(all_rows_have_the_value(value,position_column,rows,value,"Cerrar")).to be true
 end
 
-Then('I should see a table with many Nodos') do
-    rows = '/html/body/div/div/div[4]/div[2]/div/div[2]/div[2]/table/tbody/tr'
-    expect(count_rows(rows)>0).to be true
+Then('I should not see {string} filtered section') do |filter|
+
+    has_content = true
+    puts("---------------------")
+    elements = find("#root > div > div.ui.container > div.app > div > div.pusher > div.ui.segment").text
+    if (elements.include? filter)
+        has_content = true
+    else
+        has_content = false
+    end
+    expect(has_content).to be false
 end

@@ -22,5 +22,5 @@ Scenario: Save some graduates
 Scenario: Mark and desmark graduates
 	Given I push "Empresas" navlink
 	When I push the first "4" checkboxs of the table
-  And I push the first "2" checkboxs of the table
+  	And I push the first "2" checkboxs of the table
 	Then the counter of export button must be "2"

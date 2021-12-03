@@ -13,29 +13,42 @@ Background: Loggin with Google account
 	And I click "Siguiente" button
 	And I click "Verificar Acceso" button
 
-Scenario: Filter for Nodo
+
+Scenario Outline: Filter for column value
     Given I push "Empresas" in left side menu
-    When I push the "Filtrar" filter
-    And I push the "Nodo" section
-	And I push the "CABA" option of "Nodo" section
-    Then I should see a table with only "CABA" in "NODO" column
+    When I push the filter
+    And I push the "<section>" section
+	And I push the "<option>" option of "<section>" section
+    Then I should see a table with only "<option>" in "<column>" column
+Examples:
+	|       section      |  option |     column      |
+	|         Nodo       |   CABA  |      NODO       |
+	|  Nivel de Ingles   |  Basico | NIVEL DE INGLES |
 
-Scenario: Filter for level of english
-	Given I push "Empresas" in left side menu
-	When I push the "Filtrar" filter
-	And I push the "Nivel de Ingles" section
-	And I push the "Basico" option of "Nivel de Ingles" section
-	Then I should see a table with only "Basico" in "NIVEL DE INGLES" column
+Scenario Outline: Deselect filter section
+    Given I push "Empresas" in left side menu
+    When I push the filter
+	And I push the "<section>" section
+	And I push the "<option>" option of "<section>" section
+	And I deselect the filter selected
+	Then I should not see "<filter>" filtered section
+Examples:
+	|     section     |            option              |      filter       |
+	|       Nodo      |             CABA               |      NODO         |
+	|  Modulo Cursado | Introducción a la Programación | Modulo Completado |
+	| Nivel de Ingles |            Basico              |  Nivel de Ingles  |
 
-Scenario: Deselect Nodo
-	Given I push "Empresas" in left side menu
-	When I push the "Filtrar" filter
+Scenario Outline: Deselect all filters section
+    Given I push "Empresas" in left side menu
+    When I push the filter
 	And I push the "Nodo" section
 	And I push the "CABA" option of "Nodo" section
-	And I deselect the "Nodo" label 
-	Then I should see a table with many Nodos
+	And I deselect all filters 
+	Then I should not see "Quitar Todos" filtered section
 
 @duda
 Scenario: Filter for coursed module
 	Given I push "Empresas" in left side menu
 	Then I should see the buttons "Ver modulos" in "MÓDULOS CURSADOS" column with the value "Testing Funcional"
+
+
