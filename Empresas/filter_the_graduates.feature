@@ -25,6 +25,14 @@ Examples:
 	|         Nodo       |   CABA  |      NODO       |
 	|  Nivel de Ingles   |  Basico | NIVEL DE INGLES |
 
+Scenario: Filter for coursed module
+	Given I push "Empresas" in left side menu
+	When I push the filter
+    And I push the "Modulo Cursado" section
+	And I push the "Testing Funcional" option of "Modulo Cursado" section
+	Then I should see the buttons "Ver modulos" in "MÓDULOS CURSADOS" column with the value "Testing Funcional"
+
+
 Scenario Outline: Deselect filter section
     Given I push "Empresas" in left side menu
     When I push the filter
@@ -45,5 +53,3 @@ Scenario Outline: Deselect all filters section
 	And I push the "CABA" option of "Nodo" section
 	And I deselect all filters 
 	Then I should not see "Quitar Todos" filtered section
-
-
