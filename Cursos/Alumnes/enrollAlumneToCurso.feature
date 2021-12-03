@@ -13,6 +13,7 @@ Background: Loggin with Google account
     And I click "Siguiente" button
     And I click "Verificar Acceso" button
 
+@beforeCourseOfAlumnesIsCreated
 Scenario Outline: enroll one Alumne to a new Curso
     Given I click "Cursos" in left side menu
     And I click "Alumnes" section on the horizontal menu on top of the view

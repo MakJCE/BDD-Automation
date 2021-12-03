@@ -31,7 +31,7 @@ Scenario: create a new topic and use it to create a new course
     And I enter "Intive - CABA" in "Sede - Nodo" dropdown
     And I enter "Tarde(14-16)" in "Horario" field
     And I enter "Juan" in "Profesor" field
-    And I enter "Prueba" in "Notas" textarea
+    And I enter "prueba" in "Notas" textarea
     And I click "Confirmar" button
     Then the new course with "Funcional" and "Juan" is shown in the table
 
@@ -48,14 +48,14 @@ Scenario: create a new course and use it to change the current topic of that cou
     And I enter "2" in "Periodo" field
     And I enter "Activo" in "Estado" dropdown
     And I enter "Egresades" in "Curso Para:" dropdown
-    And I enter "Prueba" in "Topico" dropdown
+    And I enter "pruebacalidad" in "Topico" dropdown
     And I enter "Intive - CABA" in "Sede - Nodo" dropdown
     And I enter "Tarde(14-16)" in "Horario" field
     And I enter "Juan" in "Profesor" field
-    And I enter "Prueba" in "Notas" textarea
+    And I enter "prueba" in "Notas" textarea
     And I click "Confirmar" button
-    And I locate the row of the course with "Prueba" topic and Juan as profesor
+    And I locate the row of the course with "pruebacalidad" topic and Juan as profesor
     And I click Editar button on the located row
     And I change the "Topico" with the value "Funcional"
     And I click "Confirmar" button
-    Then the course with previous "Funcional" topic and Juan profesor should have now the "Prueba" as new topic
+    Then the course with previous "Funcional" topic and Juan profesor should have now the "pruebacalidad" as new topic

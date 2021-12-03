@@ -26,5 +26,5 @@ Scenario Outline: display the list of students of any course
 
 Examples:
 | topico         | profesor |
-| Prueba         | Juan     |
+| pruebacalidad  | Juan     |
 | Topico Ejemplo | Juan     |

@@ -30,14 +30,14 @@ Scenario Outline: create a course correctly
     Then the new course with "<Topico>" and "<Profesor>" is shown in the table
 Examples:
     | Año  | Periodo  | Estado    | CursoPara | Topico         | SedeNodo              | Horario      | Profesor   | Notas  |
-    | 2021 |  1       |  Activo   | Egresades | Prueba         | Intive - CABA         | Tarde(14-16) | Juan       | prueba |
-    | 2020 |  1       |  Activo   | Egresades | Prueba         | Intive - CABA         | Tarde(14-16) | Juan       | prueba |
-    | 2021 |  2       |  Activo   | Egresades | Prueba         | Intive - CABA         | Tarde(14-16) | Juan       | prueba |
-    | 2021 |  1       |  Inactivo | Alumnes   | Prueba         | Intive - CABA         | Tarde(14-16) | Juan       | prueba |
-    | 2021 |  1       |  Inactivo | Egresades | Prueba         | Ituzaingó - Ituzaingó | Tarde(14-16) | Juan       | prueba |
-    | 2021 |  1       |  Activo   | Egresades | Prueba         | Intive - CABA         | loquesea     | Juan       | prueba |
-    | 2021 |  1       |  Activo   | Egresades | Prueba         | Intive - CABA         | Tarde(14-16) | profe2     | prueba |
-    | 2021 |  1       |  Activo   | Egresades | Prueba         | Intive - CABA         | Tarde(14-16) | Juan       | .32ff= |
+    | 2021 |  1       |  Activo   | Egresades | pruebacalidad  | Intive - CABA         | Tarde(14-16) | Juan       | prueba |
+    | 2020 |  1       |  Activo   | Egresades | pruebacalidad  | Intive - CABA         | Tarde(14-16) | Juan       | prueba |
+    | 2021 |  2       |  Activo   | Egresades | pruebacalidad  | Intive - CABA         | Tarde(14-16) | Juan       | prueba |
+    | 2021 |  1       |  Inactivo | Alumnes   | pruebacalidad  | Intive - CABA         | Tarde(14-16) | Juan       | prueba |
+    | 2021 |  1       |  Inactivo | Egresades | pruebacalidad  | Ituzaingó - Ituzaingó | Tarde(14-16) | Juan       | prueba |
+    | 2021 |  1       |  Activo   | Egresades | pruebacalidad  | Intive - CABA         | loquesea     | Juan       | prueba |
+    | 2021 |  1       |  Activo   | Egresades | pruebacalidad  | Intive - CABA         | Tarde(14-16) | profe2     | prueba |
+    | 2021 |  1       |  Activo   | Egresades | pruebacalidad  | Intive - CABA         | Tarde(14-16) | Juan       | .32ff= |
 
 Scenario Outline: try to create a course with empty required fields
     Given I click "Cursos" in left side menu

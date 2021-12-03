@@ -17,11 +17,11 @@ Background: Loggin with Google account
 @afterCourseIsDeleted
 Scenario Outline: Edit a field of a course present in the list of courses
     Given I click "Cursos" in left side menu
-    When I locate the row of the course with "Prueba" topic and Juan as profesor
+    When I locate the row of the course with "pruebacalidad" topic and Juan as profesor
     And I click Editar button on the located row
     And I change the "<field>" with the value "<value>"
     And I click "Editar" button of the form
-    Then the course with "Prueba" topic and Juan profesor should have the "<value>" in the "<field>"
+    Then the course with "pruebacalidad" topic and Juan profesor should have the "<value>" in the "<field>"
 
 Examples:
 | field       | value                 |

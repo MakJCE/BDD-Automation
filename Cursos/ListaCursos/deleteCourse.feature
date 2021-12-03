@@ -16,7 +16,7 @@ Background: Loggin with Google account
 @beforeCourseIsCreated
 Scenario: Erase a course present in the list of courses
     Given I click "Cursos" in left side menu
-    When I locate the row of the course with "Prueba" topic and "Juan" profesor
+    When I locate the row of the course with "pruebacalidad" topic and "Juan" profesor
     And I click Eliminar button on the located row
     And I click "Confirmar" button
-    Then the course with "Prueba" topic and "Juan" profesor should not be in the list of courses
+    Then the course with "pruebacalidad" topic and "Juan" profesor should not be in the list of courses

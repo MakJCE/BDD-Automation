@@ -56,7 +56,7 @@ Before "@beforeCourseIsCreated" do
       if label.text == "Topico"
         dropdown = fi.find('div.dropdown')
         dropdown.click()
-        value = "Prueba"
+        value = "pruebacalidad"
         if dropdown.find('span.text', :text => value).visible?
           dropdown.find('span.text', :text => value).click()
         else
@@ -87,7 +87,7 @@ Before "@beforeCourseIsCreated" do
       end
   end
   click_on('Confirmar')
-  $created_user= {"Profesor" => "Juan", "Topico" => "Prueba"}
+  $created_user= {"Profesor" => "Juan", "Topico" => "pruebacalidad"}
   Capybara.current_session.driver.quit
 end
 
