@@ -1,4 +1,4 @@
-$created_user= {"Profesor" => "Juan", "Topico" => "Prueba"}
+$created_user= {"Profesor" => "Juan", "Topico" => "pruebacalidad"}
 locatedRow = -1
 Given ('I locate the row of the course with {string} topic and Juan as profesor') do |topic|
     sleep 2

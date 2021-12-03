@@ -1,5 +1,5 @@
 locatedRow = -1
-Given ('I locate the row of the course with {string} topic and {string} profesor') do |topic, profesor|
+When ('I locate the row of the course with {string} topic and {string} profesor') do |topic, profesor|
     sleep 2
     rows = all("table tr")
     rows.each_with_index do |row, index|
