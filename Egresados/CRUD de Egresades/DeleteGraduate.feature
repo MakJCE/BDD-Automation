@@ -22,6 +22,6 @@ Scenario: Cancel a Deletion of a inactive graduate of the register
 
 Scenario: Delete a inactive graduate of the register 
 	Given I push "Egresades" in left side menu
-	When I push "Eliminar" button of graduate row with the name "Eliminar1 Si"
+	When I push "Eliminar" button of graduate row with the name "Sebastian Paredes Fernandez"
     And I push "Confirm" button on the confirmation message
-	Then "Eliminar1" should't been show on the register
+	Then "Sebastian Paredes Fernandez" should't been show on the register
