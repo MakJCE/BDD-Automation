@@ -3,6 +3,16 @@ Feature: create a new course
     I want to create a new course
     In order to teach my students about a certain subject
 
+Background: Loggin with Google account
+    Given I am on the first page
+    When I click "Iniciar Sesión" button
+    And I click Iniciar con Google button
+    And I enter my username
+    And I click "Siguiente" button
+    And I enter my password
+    And I click "Siguiente" button
+    And I click "Verificar Acceso" button
+
 @afterCourseIsDeleted
 Scenario Outline: create a course correctly
     Given I click "Cursos" in left side menu
