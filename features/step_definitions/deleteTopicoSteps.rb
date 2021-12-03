@@ -4,13 +4,13 @@ When ("I locate the row of the Topico with {string} name") do |string|
     rows = all("table tr")
     rows.each_with_index do |row, index|
         if row.has_css?('td', :text => string, wait: 0)
-            locatedRow = index
+            locatedTopico = index
         end
     end
 end
 
 When ('I click Eliminar button on the located Topico') do
-    row = all("table tr")[locatedRow]
+    row = all("table tr")[locatedTopico]
     row.find('button', :text => "Eliminar").click()
 end
 

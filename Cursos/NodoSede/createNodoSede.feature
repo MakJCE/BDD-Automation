@@ -20,7 +20,7 @@ Scenario Outline: create a new Nodo
     When I click "Nodo" button
     And I enter "<value>" in "Nodo" field
     And I click "Crear" button
-    Then the nodo named "<value>" should be shown in the table of nodo-sede's
+    Then the nodo named "<value>" should be shown in the table of nodo-sedes
 
 Examples:
 | value      |

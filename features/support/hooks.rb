@@ -155,10 +155,24 @@ Before "@beforeTopicoIsCreated" do
 end 
 
 After "@afterNodoIsDeleted" do
-  puts "topico is been deleted"
+  login()
+  puts "Nodo is been deleted"
+  all("a.item").each do |item|
+    if item.text == "Cursos"
+        item.click()
+    end
+  end
+  find("div.ui.pointing.secondary.menu a", :text => "Nodos Sedes").click()
 end 
 After "@afterSedeIsDeleted" do
-  puts "topico is been deleted"
+  login()
+  puts "Sede is been deleted"
+  all("a.item").each do |item|
+    if item.text == "Cursos"
+        item.click()
+    end
+  end
+  find("div.ui.pointing.secondary.menu a", :text => "Nodos Sedes").click()
 end 
 
 Before "@beforeSedeIsCreated" do

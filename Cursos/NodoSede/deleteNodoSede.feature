@@ -19,7 +19,7 @@ Scenario: delete a new Sede
     Given I click "Cursos" in left side menu
     And I click "Nodos Sedes" section on the horizontal menu on top of the view
     When I locate the row of the Nodo with "Villa Rica" name 
-    And I locate the row of the Sede in that Nodo with "sedeuno" name 
+    And I locate the Sede named "sedeuno" in previuos Nodo
     And I click Eliminar button on the located Sede
     And I click "Confirmar" button
     Then the Sede with "sedeuno" name should not to be in the list of topics
