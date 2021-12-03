@@ -1,4 +1,4 @@
-Feature: acces to Nahual at the first time
+Feature: access to Nahual at the first time
     In order to access to initial page
     As a Nahual member
     I want to access to the welcome page
@@ -21,7 +21,7 @@ Examples:
 	  |         Ingresar al Portal      | Verificar Acceso |     ! Bienvenide Juan Casas !        |
 	  | Cambiar a una cuenta con acceso |  Cerrar Sesion   |  Para continuar debe iniciar sesión. |
 
-Scenario: Request access to the main page
+Scenario: Menu for the access to the main page
     Given I am in a page with title "Solicite Acceso"
     When I click "Solicitar" button
     Then A window is displayed showing the email of the account
