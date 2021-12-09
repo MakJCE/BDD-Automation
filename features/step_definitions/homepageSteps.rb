@@ -11,16 +11,19 @@ Given('I can see the title {string}') do |string|
   expect(page.has_content?(string)).to be true
   page.driver.browser.manage.window.resize_to(1000, 800)
 end
-
-When('I click Iniciar con Google button') do
+Given('I click {string} button') do |string|
+  sleep 1
+  click_on(string)
+end
+Given('I click Iniciar con Google button') do
   find(:xpath,"/html/body/div/div/div[2]/form/div/div/div/div/div[2]/div[2]/span/div/div/div/div/div/div/div/div/div/div/div[1]/a").click
 end
 
-When('I enter my username') do
+Given('I enter my username') do
   fill_in 'identifierId', :with => ENV['USER']
 end
 
-When('I enter my password') do
+Given('I enter my password') do
   fill_in 'password', :with => ENV['PSW']
 end
 

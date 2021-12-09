@@ -1,10 +1,5 @@
 $created_user= {}
 
-Given('I click {string} button') do |string|
-    sleep 1
-    click_on(string)
-end
-
 When('I click {string} in left side menu') do |string|
     all("a.item").each do |item|
         if item.text == string

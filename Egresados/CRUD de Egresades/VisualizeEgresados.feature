@@ -6,7 +6,7 @@ Feature: See the graduates of nahual
 
 Background: Loggin with Google account
 	Given I am on the first page
-	When I click "Iniciar Sesión" button
+	And I click "Iniciar Sesión" button
 	And I click Iniciar con Google button
 	And I enter my username
 	And I click "Siguiente" button

@@ -19,3 +19,27 @@ Lo que se debe hacer es:
 - Volver a ejecutar cualquier feature
 
 Cabe recalcar que la cuenta de prueba esta con las restricciones mínimas de seguridad.
+
+## Enlaces
+
+#### Enlace del repositorio
+#### https://github.com/MakJCE/BDD-Automation.git
+#### Enlace de trello
+#### https://trello.com/b/6ZKr7wUk/examen-final-black-box-bdd-automatización-y-smoke-testing
+#### Enlace de la presentacion
+#### https://docs.google.com/presentation/d/1IS3TFrWDoSp0z8bYxZYqVw4UQcHYsylwSMXAJbZyJ-E/edit?usp=sharing
+#### Enlace informe tecnico
+#### https://docs.google.com/document/d/11UU7kAinZVujiLWY5cp3QzppcMtQsyoZrhuYrMbglSw/edit?usp=sharing
+
+
+## Enlaces Externos
+#### Ruby (version ruby 3.0.2p107)
+#### https://www.ruby-lang.org/es/downloads/
+
+#### Instalacion de gemas
+
+gem install cucumber
+
+gem install capybara
+
+gem install selenium
