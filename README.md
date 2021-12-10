@@ -43,3 +43,16 @@ gem install cucumber
 gem install capybara
 
 gem install selenium
+
+### Instalacion de los drivers para navegar.
+#### Chrome Selenium (revisar la version de chrome que se tenga Options -> Settings -> About Chrome)
+#### https://chromedriver.chromium.org/downloads
+#### Firefox Selenium
+#### https://github.com/mozilla/geckodriver/releases
+#### Edge Selenium
+
+El driver para la pagina no requiere instalacion simplemente se lo debe enviar al bin de Ruby:
+
+Ejemplo:
+
+C:\Ruby30-x64\bin
