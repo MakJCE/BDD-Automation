@@ -43,12 +43,14 @@ When('I push {string} button on the confirmation message') do |boton|
 end
 
 When('I see the {string} number of graduates filtered') do |filter|
-    puts find('div.pusher div div.tabla h1').text
+    sleep 1
+    puts find('div.pusher div div.tabla h1').text.split[1]
     total_user = total_user + find('div.pusher div div.tabla h1').text.split[1].to_i
 end
 
 Then('I should see the total number of graduates should be equal to the sum of Egresade number and Empleade number') do
-    actual = find('div.pusher div div.tabla h1').text.to_i
+    sleep 1
+    actual = find('div.pusher div div.tabla h1').text.split[1].to_i
     expect(actual).to eql(total_user)
     total_user = 0
 end

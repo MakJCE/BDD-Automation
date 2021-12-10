@@ -1,7 +1,7 @@
 Feature: See the graduates of nahual
 	As a Nahual Reclutator or Nahual Administrator
 	I want to see the graduates of Nahual
-	In ordert to see the current employment status of graduates
+	In order to see the current employment status of graduates
 	And offer courses and work
 
 Background: Loggin with Google account

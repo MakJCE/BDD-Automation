@@ -35,6 +35,7 @@ Scenario: Don't filter the graduates
     When I push the Filter Icon button on the top of the table of graduates
     And I push the "Empleade" option
 	And I see the "Empleade" number of graduates filtered
+	And I push the Filter Icon button on the top of the table of graduates
 	And I push the "Egresade" option
 	And I see the "Egresade" number of graduates filtered
 	And I push the Filter Icon button on the top of the table of graduates
