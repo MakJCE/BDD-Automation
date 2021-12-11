@@ -12,7 +12,7 @@ Given('I can see the title {string}') do |string|
   page.driver.browser.manage.window.resize_to(1000, 800)
 end
 Given('I click {string} button') do |string|
-  sleep 1
+  sleep 2
   click_on(string)
 end
 Given('I click Iniciar con Google button') do
