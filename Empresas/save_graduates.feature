@@ -14,12 +14,12 @@ Background: Loggin with Google account
 	And I click "Verificar Acceso" button
 
 Scenario: Select some graduates of the table
-	Given I push "Empresas" in left side menu
+	Given I push "Empresas" in left side menus
 	When I push the first "3" checkboxs of the table
 	Then the counter of export button must be "3"
 
 Scenario: Select and deselect some graduates of the table
-	Given I push "Empresas" in left side menu
+	Given I push "Empresas" in left side menus
 	When I push the first "4" checkboxs of the table
   	And I push the first "2" checkboxs of the table
 	Then the counter of export button must be "2"
