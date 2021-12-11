@@ -1,4 +1,4 @@
-Feature: See the graduates of nahual
+Feature: Add new graduates to the resgister of graduates
 	As a Nahual Administrator
 	I want to add new graduates from a list in a document .csv
 	In order to add graduates more efficiently
@@ -17,5 +17,11 @@ Scenario: Upload a valid list of graduates
     Given I push "Egresades" in left side menu
 	When I click "Importar" button
 	And I upload a valid format .csv file
-	And I click on "Confirmar" button
+	And I click "Confirmar" button
 	Then A message of aprove must be showed
+
+Scenario: Upload a invalid list of graduates
+    Given I push "Egresades" in left side menu
+	When I click "Importar" button
+	And I upload a invalid format .csv file
+	Then A message of error must be showed

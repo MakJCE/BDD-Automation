@@ -11,6 +11,14 @@ Given('I push {string} in left side of the menu') do |string|
     end
 end
 
+When('I upload a valid format .csv file') do
+    find('input[type="file"]',:visible => false).set(File.absolute_path('./Egresados/TestFiles/validfile.csv'))
+end
+
+When('I upload a invalid format .csv file') do
+    find('input[type="file"]',:visible => false).set(File.absolute_path('./Egresados/TestFiles/invalidfile.csv'))
+end
+
 When ('I push the Filter Icon button on the top of the table of graduates') do
     find('i.filter.icon').click
 end
@@ -136,4 +144,17 @@ Then('I can see his {string} datum') do |campo|
    end
    result = find("#form-data div:nth-child(#{attrtocheck}) div.input").text
    expect(result).not_to be_empty
+end
+
+Then('A message of aprove must be showed') do
+    sleep 1
+    result = find('div.positive.message div.content div.header').text
+    expect(result).to eql("Registro exitoso!")
+end
+
+Then('A message of error must be showed') do
+    sleep 2
+    result = find('div.ui.negative.message div.content div.header').text
+    #body > div.ui.page.modals.dimmer.transition.visible.active > div > div.content > div:nth-child(1) > div > div > div
+    expect(result).to eql("Error de carga!")
 end
