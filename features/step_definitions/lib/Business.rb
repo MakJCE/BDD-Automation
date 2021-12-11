@@ -139,4 +139,19 @@ class Business
             return false
         end
     end
+    def push_first_eye_button()
+        @page.find(:xpath,"/html/body/div/div/div[4]/div[2]/div/div[2]/div[2]/table/tbody/tr[1]/td[8]/button").click
+    end
+    def click_checkboxs(rows)
+        row = 1
+        while (row <= rows) do
+            @page.find(:xpath, "/html/body/div/div/div[4]/div[2]/div/div[2]/div[2]/table/tbody/tr["+row.to_s+"]/td[1]/input").click
+            row = row + 1
+        end
+    end
+    def get_graduates_selected()
+        graduates = @page.find(:xpath, "/html/body/div/div/div[4]/div[2]/div/div[2]/div[3]/span/div/div").text
+        graduates = graduates.to_i
+        return graduates
+    end
 end
