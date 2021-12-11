@@ -15,7 +15,7 @@ Background: Loggin with Google account
 
 
 Scenario Outline: Filter for column value
-    Given I push "Empresas" in left side menu
+    Given I push "Empresas" in left side menus
     When I push the filter
     And I push the "<section>" section
 	And I push the "<option>" option of "<section>" section
@@ -26,15 +26,15 @@ Examples:
 	|  Nivel de Ingles   |  Basico | NIVEL DE INGLES |
 
 Scenario: Filter for coursed module
-	Given I push "Empresas" in left side menu
+	Given I push "Empresas" in left side menus
 	When I push the filter
     And I push the "Modulo Cursado" section
-	And I push the "Testing Funcional" option of "Modulo Cursado" section
-	Then I should see the buttons "Ver modulos" in "MÓDULOS CURSADOS" column with the value "Testing Funcional"
+	And I push the "pruebacalidad" option of "Modulo Cursado" section
+	Then I should see the buttons "Ver modulos" in "MÓDULOS CURSADOS" column with the value "pruebacalidad"
 
 
 Scenario Outline: Deselect filter section
-    Given I push "Empresas" in left side menu
+    Given I push "Empresas" in left side menus
     When I push the filter
 	And I push the "<section>" section
 	And I push the "<option>" option of "<section>" section
@@ -46,8 +46,8 @@ Examples:
 	|  Modulo Cursado | Introducción a la Programación | Modulo Completado |
 	| Nivel de Ingles |            Basico              |  Nivel de Ingles  |
 
-Scenario Outline: Deselect all filters section
-    Given I push "Empresas" in left side menu
+Scenario: Deselect all filters section
+    Given I push "Empresas" in left side menus
     When I push the filter
 	And I push the "Nodo" section
 	And I push the "CABA" option of "Nodo" section
