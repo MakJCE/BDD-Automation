@@ -1,4 +1,4 @@
-Feature: Add new graduates to the resgister of graduates
+Feature: Add new graduates to the register of graduates from a .csv file
 	As a Nahual Administrator
 	I want to add new graduates from a list in a document .csv
 	In order to add graduates more efficiently
