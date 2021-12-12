@@ -17,7 +17,7 @@ Background: Loggin with Google account
 Scenario: delete a new Topico
     Given I click "Cursos" in left side menu
     And I click "Topicos" section on the horizontal menu on top of the view
-    When I locate the row of the Topico with "Topico de ejemplo" name 
+    When I locate the row of the Topico with "Topicodeejemplo" name 
     And I click Eliminar button on the located Topico
     And I click "Confirmar" button
-    Then the Topico with "Topico de ejemplo" name should not to be in the list of topics
+    Then the Topico with "Topicodeejemplo" name should not to be in the list of topics

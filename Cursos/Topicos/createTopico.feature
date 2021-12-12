@@ -18,11 +18,11 @@ Scenario Outline: create a new topic
     Given I click "Cursos" in left side menu
     And I click "Topicos" section on the horizontal menu on top of the view
     When I click "Topico" button
-    And I enter "<value>" in "Topico" field
+    And I enter "<value>" name in Topico field
     And I click "Crear" button
     Then the topic named "<value>" should be shown in the table of topics
 
 Examples:
 | value             |
-| Topico de ejemplo |
+| Topicodeejemplo   |
 | 1223.cr23         |
