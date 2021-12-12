@@ -12,15 +12,6 @@ Background: Loggin with Google account
   And I enter my password
   And I click "Siguiente" button
 
-Scenario Outline: Log in and out of access page
-    Given I am in a page with title "<button_title>"
-    When I click "<button>" button
-    Then I am redirected to a page with the title "<title>"
-Examples: 
-	  |           button_title          |     button       |              title                   |
-	  |         Ingresar al Portal      | Verificar Acceso |     ! Bienvenide Juan Casas !        |
-	  | Cambiar a una cuenta con acceso |  Cerrar Sesion   |  Para continuar debe iniciar sesión. |
-
 Scenario: Menu for the access to the main page
     Given I am in a page with title "Solicite Acceso"
     When I click "Solicitar" button

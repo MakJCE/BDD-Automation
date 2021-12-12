@@ -1,6 +1,5 @@
-require './features/step_definitions/lib/empresas.rb'
 require './features/step_definitions/lib/MainMenu.rb'
-require './features/step_definitions/lib/Business.rb'
+require './features/step_definitions/lib/BusinessPage.rb'
 $business = -1
 
 Given('I push {string} in left side menus') do |string|
