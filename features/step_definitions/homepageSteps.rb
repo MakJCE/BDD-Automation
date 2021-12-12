@@ -1,9 +1,13 @@
+require './features/pages/HomePage.rb'
+$home = -1
+request_menu = -1
 Given('I am on the first page') do
   visit('/')
   page.driver.browser.manage.window.resize_to(1200, 800)
 end
 
 Given ("I am in a page with title {string}") do |title|
+  $home = HomePage.new(page)
   expect(page.has_content?(title)).to be true
 end
 
@@ -32,15 +36,20 @@ When('I push {string} option in the page') do |element|
 end
 
 Then('I am redirected to a page with the title {string}') do |title|
-  expect(page.has_content?(title)).to be true
+  request = $home.exist_the_title(title)
+  expect(request).to be true
 end
 
 Then('A window is displayed showing the email of the account') do 
-  value = find("#form-acceso").value
-  expect(value).to have_content(ENV["USER"])
+  request_menu = RequestAccessPage.new(page)
+  value = request_menu.get_email_from_field()
+  expect(value).to eq(ENV["USER"])
 end
-Then('the {string} field {string}') do |space, empty|
-  request = empty == "is not empty"
-  element = page.find('#'+space).value
-  expect(element.empty? == false).to be request
+Then('the name field is not empty') do
+  request = request_menu.name_field_is_empty()
+  expect(request).to be false
+end
+Then('the motive field is empty') do
+  request = request_menu.motive_field_is_empty()
+  expect(request).to be true
 end
