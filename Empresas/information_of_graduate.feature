@@ -15,7 +15,7 @@ Background: Loggin with Google account
 
 
 Scenario: View the complete information of a graduate
-	Given I push "Empresas" in left side menu
+	Given I push "Empresas" in left side menus
 	When I push the first eye button
 	Then I should see "Correo" title
 	And I should see "Teléfono:" title

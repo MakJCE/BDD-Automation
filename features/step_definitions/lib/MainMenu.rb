@@ -7,8 +7,11 @@ class MainMenu
         @page.all("a.item").each do |item|
             if item.text == option
                 item.click()
+                if item.text == "Empresas"
+                    return BusinessPage.new(@page)
+                end
             end
         end
-        return BusinessPage.new(@page)
+        return -1
     end
 end
