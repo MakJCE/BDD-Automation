@@ -2,6 +2,7 @@ locatedRow = -1
 nombre = ""
 attrtocheck = -1
 total_user = 0
+name = 
 Given('I push {string} in left side of the menu') do |string|
     sleep 1
     all("a.item").each do |item|
@@ -162,4 +163,8 @@ Then('{string} should been shown on the certificate name') do |name|
     sleep 1
     result = find('div.certificado div.datos h1.nombreEgresade').text
     expect(result).to eql(name)
+end
+
+Then('A pdf file with the certificate should been downloaded') do
+    File.exist?('C:\Users\Home\Downloads\#{}')
 end

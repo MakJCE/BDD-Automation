@@ -17,3 +17,9 @@ Scenario: Certificate of a Specific Graduate
 	Given I push "Egresades" in left side menu
 	When I push "Certificado" button of graduate row with the name "Mahi Simpson Flanders"
 	Then "Mahi Simpson Flanders" should been shown on the certificate name
+
+Scenario: Download a Certificate of a Specific Graduate
+	Given I push "Egresades" in left side menu
+	When I push "Certificado" button of graduate row with the name "Mahi Simpson Flanders"
+    And I click "Descargar PDF" button
+	Then A pdf file with the certificate should been downloaded
