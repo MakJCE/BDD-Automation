@@ -1,9 +1,6 @@
-require './features/step_definitions/lib/Business.rb'
-require './features/step_definitions/lib/empresas.rb'
-class Business
-    def initialize(page,filter_xpath)
+class BusinessPage
+    def initialize(page)
         @page = page
-        @filter_xpath = filter_xpath
     end
     def count_rows(xpath)
         return @page.all(:xpath, xpath).count

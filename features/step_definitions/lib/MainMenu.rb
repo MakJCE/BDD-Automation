@@ -1,3 +1,4 @@
+require './features/step_definitions/lib/BusinessPage.rb'
 class MainMenu
     def initialize(page)
         @page = page
@@ -8,6 +9,6 @@ class MainMenu
                 item.click()
             end
         end
-        return Business.new(@page,"/html/body/div/div/div[4]/div[2]/div/div[2]/div[1]/div/div[2]")
+        return BusinessPage.new(@page)
     end
 end
