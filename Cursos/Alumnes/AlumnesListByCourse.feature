@@ -13,18 +13,13 @@ Background: Loggin with Google account
     And I click "Siguiente" button
     And I click "Verificar Acceso" button
 
-@beforeCourseIsCreated
+@beforeAlumnesCourseIsCreated
 @beforeAlumneIsCreated
-@afterAlumneIsRemoved
+@afterAlumneIsDeleted
 @afterCourseIsDeleted
 Scenario Outline: display the list of students of any course
     Given I click "Cursos" in left side menu
     And I click "Alumnes" section on the horizontal menu on top of the view
     When I click list of courses dropdown
-    And I select the course with "<topico>" and "<profesor>"
-    Then the alumne named "Jose" should be shown alone in the table
-
-Examples:
-| topico         | profesor |
-| pruebacalidad  | Juan     |
-| Topico Ejemplo | Juan     |
+    And I select the course with "pruebacalidad" and "juanprueba"
+    Then I should see the Alumne with "Jaime" name and "Fernandez" lastname in the list

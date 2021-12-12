@@ -31,10 +31,9 @@ Scenario Outline: create a course correctly
 Examples:
     | Año  | Periodo  | Estado    | CursoPara | Topico         | SedeNodo              | Horario      | Profesor   | Notas  |
     | 2021 |  1       |  Activo   | Egresades | pruebacalidad  | Intive - CABA         | Tarde(14-16) | Juan       | prueba |
-    | 2020 |  1       |  Activo   | Egresades | pruebacalidad  | Intive - CABA         | Tarde(14-16) | Juan       | prueba |
     | 2021 |  2       |  Activo   | Egresades | pruebacalidad  | Intive - CABA         | Tarde(14-16) | Juan       | prueba |
-    | 2021 |  1       |  Inactivo | Alumnes   | pruebacalidad  | Intive - CABA         | Tarde(14-16) | Juan       | prueba |
-    | 2021 |  1       |  Inactivo | Egresades | pruebacalidad  | Ituzaingó - Ituzaingó | Tarde(14-16) | Juan       | prueba |
+    | 2021 |  1       |  Activo   | Alumnes   | pruebacalidad  | Intive - CABA         | Tarde(14-16) | Juan       | prueba |
+    | 2021 |  1       |  Activo   | Egresades | pruebacalidad  | Ituzaingó - Ituzaingó | Tarde(14-16) | Juan       | prueba |
     | 2021 |  1       |  Activo   | Egresades | pruebacalidad  | Intive - CABA         | loquesea     | Juan       | prueba |
     | 2021 |  1       |  Activo   | Egresades | pruebacalidad  | Intive - CABA         | Tarde(14-16) | profe2     | prueba |
     | 2021 |  1       |  Activo   | Egresades | pruebacalidad  | Intive - CABA         | Tarde(14-16) | Juan       | .32ff= |
