@@ -2,6 +2,7 @@ locatedRow = -1
 nombre = ""
 attrtocheck = -1
 total_user = 0
+name = 
 Given('I push {string} in left side of the menu') do |string|
     sleep 1
     all("a.item").each do |item|
@@ -155,6 +156,15 @@ end
 Then('A message of error must be showed') do
     sleep 2
     result = find('div.ui.negative.message div.content div.header').text
-    #body > div.ui.page.modals.dimmer.transition.visible.active > div > div.content > div:nth-child(1) > div > div > div
     expect(result).to eql("Error de carga!")
+end
+
+Then('{string} should been shown on the certificate name') do |name|
+    sleep 1
+    result = find('div.certificado div.datos h1.nombreEgresade').text
+    expect(result).to eql(name)
+end
+
+Then('A pdf file with the certificate of {string} should been downloaded') do|name|
+    File.exist?("C:\\Users\\Home\\Downloads\\#{name}.pdf")
 end
