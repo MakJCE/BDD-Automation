@@ -1,3 +1,4 @@
+require './features/pages/BusinessPage.rb'
 business = -1
 
 When('I push the first eye button') do

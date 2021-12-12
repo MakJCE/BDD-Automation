@@ -1,4 +1,4 @@
-require './features/step_definitions/lib/HomePage.rb'
+require './features/pages/HomePage.rb'
 $home = -1
 request_menu = -1
 Given('I am on the first page') do
