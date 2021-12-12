@@ -165,6 +165,6 @@ Then('{string} should been shown on the certificate name') do |name|
     expect(result).to eql(name)
 end
 
-Then('A pdf file with the certificate should been downloaded') do
-    File.exist?('C:\Users\Home\Downloads\#{}')
+Then('A pdf file with the certificate of {string} should been downloaded') do|name|
+    File.exist?("C:\\Users\\Home\\Downloads\\#{name}.pdf")
 end

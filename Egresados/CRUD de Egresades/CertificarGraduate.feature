@@ -22,4 +22,4 @@ Scenario: Download a Certificate of a Specific Graduate
 	Given I push "Egresades" in left side menu
 	When I push "Certificado" button of graduate row with the name "Mahi Simpson Flanders"
     And I click "Descargar PDF" button
-	Then A pdf file with the certificate should been downloaded
+	Then A pdf file with the certificate of "Mahi Simpson Flanders" should been downloaded
