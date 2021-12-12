@@ -155,6 +155,11 @@ end
 Then('A message of error must be showed') do
     sleep 2
     result = find('div.ui.negative.message div.content div.header').text
-    #body > div.ui.page.modals.dimmer.transition.visible.active > div > div.content > div:nth-child(1) > div > div > div
     expect(result).to eql("Error de carga!")
+end
+
+Then('{string} should been shown on the certificate name') do |name|
+    sleep 1
+    result = find('div.certificado div.datos h1.nombreEgresade').text
+    expect(result).to eql(name)
 end
