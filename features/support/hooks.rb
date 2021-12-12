@@ -328,7 +328,7 @@ Before "@beforeAlumneIsCreated" do
       end
       if label.text == "Nombre/s"
           input = fi.find('input')
-          input.set("Jaime")
+          input.set("Marco")
       end
       if label.text == "Apellidos"
           input = fi.find('input')
@@ -372,7 +372,7 @@ Before "@beforeAlumneIsCreated" do
       end
   end
   click_on('Inscribir')
-  $created_user= {"nombre" => "Jaime", "apellido" => "Fernandez"}
+  $created_user= {"nombre" => "Marco", "apellido" => "Fernandez"}
   sleep 5
   Capybara.current_session.driver.quit
 end

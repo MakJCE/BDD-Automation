@@ -22,4 +22,4 @@ Scenario Outline: display the list of students of any course
     And I click "Alumnes" section on the horizontal menu on top of the view
     When I click list of courses dropdown
     And I select the course with "pruebacalidad" and "juanprueba"
-    Then I should see the Alumne with "Jaime" name and "Fernandez" lastname in the list
+    Then I should see the Alumne with "Marco" name and "Fernandez" lastname in the list

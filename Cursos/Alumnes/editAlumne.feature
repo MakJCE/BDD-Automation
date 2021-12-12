@@ -13,16 +13,14 @@ Background: Loggin with Google account
     And I click "Siguiente" button
     And I click "Verificar Acceso" button
 
-@beforeAlumnesCourseIsCreated
 @beforeAlumneIsCreated
 @afterAlumneIsDeleted
-@afterCourseIsDeleted
 Scenario Outline: edit Alumne of a new Curso
     Given I click "Cursos" in left side menu
     And I click "Alumnes" section on the horizontal menu on top of the view
     When I click list of courses dropdown
     And I select the course with "pruebacalidad" and "juanprueba"
-    And I locate the new Alumne with name "Jaime" and lastname "Fernandez" in the list
+    And I locate the new Alumne with name "Mario" and lastname "Fernandez" in the list
     And I click Editar button of that Alumne
     And I change the "<field>" with the value "<value>"
     And I click Guardar Cambios button
@@ -31,9 +29,3 @@ Scenario Outline: edit Alumne of a new Curso
 Examples:
 | field              | value            |
 | Nombre/s           | .32ff=           |
-| Tipo DNI           | .32ff=           |
-| DNI                | .32ff=           |
-| Apellidos          | .32ff=           |
-| Correo Electrónico | .32ff=           |
-| Teléfono           | .32ff=           |
-| Nacionalidad       | .32ff=           |
