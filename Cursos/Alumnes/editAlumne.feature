@@ -29,3 +29,9 @@ Scenario Outline: edit Alumne of a new Curso
 Examples:
 | field              | value            |
 | Nombre/s           | .32ff=           |
+| Apellidos          | .32ff=           |
+| DNI                | .32ff=           |
+| Correo Electrónico | .32ff=           |
+| Teléfono           | .32ff=           |
+| Nacionalidad       | .32ff=           |
+| Tipo DNI           | .32ff=           |

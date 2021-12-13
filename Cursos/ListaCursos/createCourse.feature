@@ -19,13 +19,13 @@ Scenario Outline: create a course correctly
     When I click "Nuevo Curso" button
     And I enter "<Año>" in "Año" field
     And I enter "<Periodo>" in "Periodo" field
-    And I enter "<Estado>" in "Estado" dropdown
-    And I enter "<CursoPara>" in "Curso Para:" dropdown
-    And I enter "<Topico>" in "Topico" dropdown
-    And I enter "<SedeNodo>" in "Sede - Nodo" dropdown
+    And I enter "<Estado>" in "Estado" field
+    And I enter "<CursoPara>" in "Curso Para:" field
+    And I enter "<Topico>" in "Topico" field
+    And I enter "<SedeNodo>" in "Sede - Nodo" field
     And I enter "<Horario>" in "Horario" field
     And I enter "<Profesor>" in "Profesor" field
-    And I enter "<Notas>" in "Notas" textarea
+    And I enter "<Notas>" in "Notas" field
     And I click "Confirmar" button
     Then the new course with "<Topico>" and "<Profesor>" is shown in the table
 Examples:
@@ -38,6 +38,7 @@ Examples:
     | 2021 |  1       |  Activo   | Egresades | pruebacalidad  | Intive - CABA         | Tarde(14-16) | profe2     | prueba |
     | 2021 |  1       |  Activo   | Egresades | pruebacalidad  | Intive - CABA         | Tarde(14-16) | Juan       | .32ff= |
 
+@este
 Scenario Outline: try to create a course with empty required fields
     Given I click "Cursos" in left side menu
     When I click "Nuevo Curso" button
