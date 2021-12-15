@@ -13,9 +13,7 @@ Background: Loggin with Google account
     And I click "Siguiente" button
     And I click "Verificar Acceso" button
 
-@beforeAlumnesCourseIsCreated
 @afterAlumneIsDeleted
-@afterCourseIsDeleted
 Scenario Outline: enroll one Alumne to a new Curso
     Given I click "Cursos" in left side menu
     And I click "Alumnes" section on the horizontal menu on top of the view
@@ -29,21 +27,19 @@ Scenario Outline: enroll one Alumne to a new Curso
     And I enter "<correo>" in "Correo Electrónico" field
     And I enter "<telefono>" in "Teléfono" field
     And I enter "<fecha>" in "Fecha de Nacimiento" field
-    And I enter "<sedenodo>" in "Sede - Nodo" dropdown
-    And I enter "<ingles>" in "Nivel de Inglés" dropdown
+    And I enter "<sedenodo>" in "Sede - Nodo" field
+    And I enter "<ingles>" in "Nivel de Inglés" field
     And I enter "<nacionalidad>" in "Nacionalidad" field
     And I click "Inscribir" button
     Then I should see the new Alumne "<nombre>" name and "<apellido>" lastname to the end of the list
 
 Examples:
 | dni | tipodni | nombre | apellido  | correo            | telefono | fecha      | sedenodo       | ingles     | nacionalidad | opcional | detalle  |
-| 123 | bueno   | Juan   | Fernandez | ejemplo@gmail.com | 12345678 | 01/01/1998 | Intive - CABA  | Intermedio | argentina    | opcional | prueba   |
+| 123 | bueno   | Sergio | Fernandez | ejemplo@gmail.com | 12345678 | 01/01/1998 | Intive - CABA  | Intermedio | argentina    | opcional | prueba   |
 | 321 |         | .32ff= | .32ff=    | ejemplo@gmail.com | 32473832 | 12/10/2001 | palermo - CABA | Avanzado   | chilena      | .32ff=   | .32ff=   |
 
 
-@beforeAlumnesCourseIsCreated
 @afterAlumneIsDeleted
-@afterCourseIsDeleted
 Scenario Outline: try to enroll one Alumne to a new Curso with incorrect values
     Given I click "Cursos" in left side menu
     And I click "Alumnes" section on the horizontal menu on top of the view
@@ -57,8 +53,8 @@ Scenario Outline: try to enroll one Alumne to a new Curso with incorrect values
     And I enter "<correo>" in "Correo Electrónico" field
     And I enter "<telefono>" in "Teléfono" field
     And I enter "<fecha>" in "Fecha de Nacimiento" field
-    And I enter "<sedenodo>" in "Sede - Nodo" dropdown
-    And I enter "<ingles>" in "Nivel de Inglés" dropdown
+    And I enter "<sedenodo>" in "Sede - Nodo" field
+    And I enter "<ingles>" in "Nivel de Inglés" field
     And I enter "<nacionalidad>" in "Nacionalidad" field
     Then the "Inscribir" button is disabled
 

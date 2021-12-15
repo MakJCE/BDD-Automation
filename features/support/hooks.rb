@@ -190,36 +190,6 @@ Before "@beforeSedeIsCreated" do
   puts "topico is been created"
 end 
 
-After ('@afterAlumneIsDeleted') do
-  login()
-  puts "alumne is been deleted"
-  all("a.item").each do |item|
-    if item.text == "Cursos"
-        item.click()
-    end
-  end
-  find("div.ui.pointing.secondary.menu a", :text => "Alumnes").click()
-  sleep 2
-  name = $created_user["nombre"]
-  lastname = $created_user["apellido"]
-  locatedRow = -1
-  rows = all("table tr")
-  rows.each_with_index do |row, index|
-      if row.has_css?('td', :text => name, wait: 0)
-        if row.has_css?('td', :text => lastname, wait: 0)
-          locatedRow = index
-        end
-      end
-  end
-  if locatedRow > 0
-    row = all("table tr")[locatedRow]
-    row.find('button', :text => "Eliminar").click()
-    page.find('button', :text => "Confirmar").click()
-  end
-  $created_user={}
-  Capybara.current_session.driver.quit
-end
-
 Before "@beforeAlumnesCourseIsCreated" do
   login()
   all("a.item").each do |item|
@@ -295,6 +265,37 @@ Before "@beforeAlumnesCourseIsCreated" do
   end
   click_on('Confirmar')
   $created_user= {"Profesor" => "juanprueba", "Topico" => "pruebacalidad"}
+  Capybara.current_session.driver.quit
+end
+
+After ('@afterAlumneIsDeleted') do
+  login()
+  puts "alumne is been deleted"
+  all("a.item").each do |item|
+    if item.text == "Cursos"
+        item.click()
+    end
+  end
+  find("div.ui.pointing.secondary.menu a", :text => "Alumnes").click()
+  sleep 2
+  name = $created_user["nombre"]
+  lastname = $created_user["apellido"]
+  puts name, lastname
+  locatedRow = -1
+  rows = all("table tr")
+  rows.each_with_index do |row, index|
+      if row.has_css?('td', :text => name, wait: 0)
+        if row.has_css?('td', :text => lastname, wait: 0)
+          locatedRow = index
+        end
+      end
+  end
+  if locatedRow > 0
+    row = all("table tr")[locatedRow]
+    row.find('button', :text => "Eliminar").click()
+    page.find('button', :text => "Confirmar").click()
+  end
+  $created_user={}
   Capybara.current_session.driver.quit
 end
 
