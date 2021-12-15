@@ -38,7 +38,6 @@ Examples:
     | 2021 |  1       |  Activo   | Egresades | pruebacalidad  | Intive - CABA         | Tarde(14-16) | profe2     | prueba |
     | 2021 |  1       |  Activo   | Egresades | pruebacalidad  | Intive - CABA         | Tarde(14-16) | Juan       | .32ff= |
 
-@este
 Scenario Outline: try to create a course with empty required fields
     Given I click "Cursos" in left side menu
     When I click "Nuevo Curso" button
