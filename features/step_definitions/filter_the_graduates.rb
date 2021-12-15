@@ -7,6 +7,10 @@ Given('I push {string} in left side menus') do |string|
     $business = menu.click_in_menu(string)
 end
 
+Given('I push {string} in left side menu') do |string|
+    menu = MainMenu.new(page)
+    $business = menu.click_in_menu(string)
+end
 
 When('I push the filter') do
     sleep 2

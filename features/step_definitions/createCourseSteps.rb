@@ -1,12 +1,6 @@
 $created_user= {}
 
-When('I click {string} in left side menu') do |string|
-    all("a.item").each do |item|
-        if item.text == string
-            item.click()
-        end
-    end
-end
+
 
 When('I enter {string} in {string} field') do |value, field|
     $created_user[field] = value

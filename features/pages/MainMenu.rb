@@ -1,4 +1,4 @@
-require './features/step_definitions/lib/BusinessPage.rb'
+require './features/pages/BusinessPage.rb'
 class MainMenu
     def initialize(page)
         @page = page

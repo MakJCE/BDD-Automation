@@ -15,18 +15,18 @@ Background: Loggin with Google account
 
 
 Scenario Outline: Filter for column value
-    Given I push "Empresas" in left side menus
+    Given I push "Empresas" in left side menu
     When I push the filter
     And I push the "<section>" section
 	And I push the "<option>" option of "<section>" section
     Then I should see a table with only "<option>" in "<column>" column
 Examples:
-	|       section      |  option |     column      |
-	|         Nodo       |   CABA  |      NODO       |
-	|  Nivel de Ingles   |  Basico | NIVEL DE INGLES |
+	|       section      |  option  |     column      |
+	|         Nodo       | Santa Fe |      NODO       |
+	|  Nivel de Ingles   |  Basico  | NIVEL DE INGLES |
 
 Scenario: Filter for coursed module
-	Given I push "Empresas" in left side menus
+	Given I push "Empresas" in left side menu
 	When I push the filter
     And I push the "Modulo Cursado" section
 	And I push the "pruebacalidad" option of "Modulo Cursado" section
@@ -34,7 +34,7 @@ Scenario: Filter for coursed module
 
 
 Scenario Outline: Deselect filter section
-    Given I push "Empresas" in left side menus
+    Given I push "Empresas" in left side menu
     When I push the filter
 	And I push the "<section>" section
 	And I push the "<option>" option of "<section>" section
@@ -47,7 +47,7 @@ Examples:
 	| Nivel de Ingles |            Basico              |  Nivel de Ingles  |
 
 Scenario: Deselect all filters section
-    Given I push "Empresas" in left side menus
+    Given I push "Empresas" in left side menu
     When I push the filter
 	And I push the "Nodo" section
 	And I push the "CABA" option of "Nodo" section

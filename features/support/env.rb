@@ -30,9 +30,8 @@ class CapybaraDriverRegistrar
 end
 
 
-
-CapybaraDriverRegistrar.register_selenium_driver(:chrome)
-#CapybaraDriverRegistrar.register_selenium_driver(:firefox)
+#CapybaraDriverRegistrar.register_selenium_driver(:chrome)
+CapybaraDriverRegistrar.register_selenium_driver(:firefox)
 #CapybaraDriverRegistrar.register_selenium_driver(:edge)
 Capybara.run_server = false
 #World(Capybara)
